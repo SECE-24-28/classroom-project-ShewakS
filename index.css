@@ -1,0 +1,16 @@
+*{
+    background-color: rgb(111, 89, 89);
+    color:azure;
+}
+
+video{
+    height: 300px;
+    width:500px;
+}
+
+iframe{
+    background-color: white;
+    color:white;
+    height:auto;
+    width: 500px;
+}
