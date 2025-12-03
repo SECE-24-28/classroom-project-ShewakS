@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAVEL</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        
+        }
+        ol{
+            list-style-type: none;
+            display:flex;
+            flex-wrap:wrap;
+        }
+        li,h1{
+            color: white;
+            padding-left: 5px;
+        }
+        li{
+            font-size: 20px;        }
+        nav{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: black;
+            align-items: center;
+        }
+        video{
+            position: fixed;
+            top:0px;
+            left:0px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .text{
+            position: fixed;
+            top:250px;
+            left:20px;  
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        button{
+            margin-top: 20px;
+            padding:10px;
+            border-radius:10px;
+            transition: 0.3s;
+        }
+        button:hover{
+            letter-spacing: 4px;
+            background-color:olivedrab;
+            color: black;
+        }
+        img{
+            width: 50px;
+            height: 50px;
+        }
+        li:hover{
+            transform: translate(5px);
+        }
+        footer{
+            position: fixed;
+            left:20px;
+            bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>TRAVEL</h1>
+        <ol>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+        </ol>
+    </nav>
+    <main>
+        <video src="beach.mp4" autoplay loop muted ></video>
+    </main>
+    <div class="text">
+        <h1>Welcome to Travel World</h1>
+        <h1>Explore the World</h1>
+        <p style="color: aliceblue;">Explore the beauty of the world with us. Discover new places, cultures, and adventures. Your journey starts here!</p>
+        <button>Get Started</button>
+    </div>
+    <footer>
+        <ol>
+            <li><img src="whatsapp.jpeg"></li>
+            <li><img src="insta.jpeg"></li>
+            <li><img src="facebook.png"></li>
+        </ol>
+    </footer>
+    
+</body>
+</html>

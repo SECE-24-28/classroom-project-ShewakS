@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      .btn-group {
+        display: flex;
+        gap: 10px;
+        justify-content: center; 
+        flex-wrap: wrap;       
+      }
+
+      .btn-group button {
+        padding: 8px 14px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    </style>
+
+    <script>
+        function add(){
+            const a = parseInt(document.getElementById("t1").value);
+            const b = parseInt(document.getElementById("t2").value);
+            const c = a + b;
+            document.getElementById("t3").value = c;
+        }
+
+        function sub(){
+            const a = parseInt(document.getElementById("t1").value);
+            const b = parseInt(document.getElementById("t2").value);
+            const c = a - b;
+            document.getElementById("t3").value = c;
+        }
+
+        function mul(){
+            const a = parseInt(document.getElementById("t1").value);
+            const b = parseInt(document.getElementById("t2").value);
+            const c = a * b;
+            document.getElementById("t3").value = c;
+        }
+
+        function div(){
+            const a = parseInt(document.getElementById("t1").value);
+            const b = parseInt(document.getElementById("t2").value);
+            const c = a / b;
+            document.getElementById("t3").value = c;
+        }
+    </script>
+</head>
+<body>
+    <h1>Basic Calculator</h1>
+    <form>
+        <table>
+            <tr>
+                <td>First number : </td>
+                <td><input type="text" placeholder="Enter the first value" id="t1"></td>
+            </tr>
+            <tr>
+                <td>Second number : </td>
+                <td><input type="text" placeholder="Enter the second value" id="t2"></td>
+            </tr>
+            <tr>
+                <td>Result : </td>
+                <td><input type="text" placeholder="Result" id="t3"></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <div class="btn-group">
+                  <button type="button" onclick="add()">Add</button>
+                  <button type="button" onclick="sub()">Subtract</button>
+                  <button type="button" onclick="mul()">Multiply</button>
+                  <button type="button" onclick="div()">Division</button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+                <!-- <td>Reset</td> -->
+                <td><input type="reset"></td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+</html>

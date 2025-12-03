@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+
+    <script>
+        let previous = ""; 
+        
+        function demo(){
+            let img = document.getElementById("link");
+            previous = img.src; 
+            img.src = "facebook.png";
+        }
+
+        function prev(){
+            let img = document.getElementById("link");
+            img.src = previous; 
+        }
+    </script>
+</head>
+<body>
+    <img id="link" src="insta.jpeg" alt="Instagram">
+    <button onclick="demo()">Change</button>
+    <button onclick="prev()">Previous</button>
+</body>
+</html>
