@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="course">
+    <button id="bt">Add</button>
+    <ol id="list"></ol>
+    <script>
+        let tex=document.getElementById("course");
+        let btn=document.getElementById("bt");
+        let list_item=document.getElementById("list");
+        btn.addEventListener("click",()=>{
+            const value = tex.value.trim();
+            if(value!==""){
+                let li=document.createElement("li");
+
+                let span = document.createElement("span");
+                span.textContent = value;
+                li.appendChild(span);
+
+                let del = document.createElement("button");
+                del.textContent = "Delete";
+                del.style.marginLeft = "8px";
+                del.addEventListener("click", ()=> {
+                    list_item.removeChild(li);
+                });
+                li.appendChild(del);
+
+                list_item.appendChild(li);
+
+                tex.value = "";
+                tex.focus();
+            }
+        });
+
+        tex.addEventListener("keypress", (e)=>{
+            if(e.key === "Enter"){
+                e.preventDefault();
+                btn.click();
+            }
+        });
+        
+    </script>
+</body>
+</html>

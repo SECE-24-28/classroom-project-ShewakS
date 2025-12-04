@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    function press(){
+        let body = document.getElementById("main");
+        let hd = document.createElement("h1");
+        hd.innerHTML="I am from India";
+        hd.style.backgroundColor="Black";
+        hd.style.color="White";
+        body.appendChild(hd);
+    }
+</script>
+<body id="main">
+    <button id="btn" onclick="press()">Click Me</button>
+</body>
+</html>

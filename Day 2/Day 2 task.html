@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login</title>
+  <style>
+    :root{
+      --bg:#f3f6fb;
+      --card:#ffffff;
+      --accent:#2874f0;
+      --muted:#6b7280;
+      --radius:10px;
+      --shadow: 0 8px 30px rgba(35,47,63,0.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Segoe UI, system-ui, -apple-system, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,var(--bg),#ffffff);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+      color:#111827;
+    }
+
+    .login-wrap{
+      width:100%;
+      max-width:420px;
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .login-header{
+      background:linear-gradient(90deg,var(--accent),#3aa0ff);
+      color:#fff;
+      padding:22px 24px;
+    }
+    .login-header h1{margin:0;font-size:20px;letter-spacing:0.2px}
+    .login-header p{margin:6px 0 0;font-size:13px;opacity:.95;color:rgba(255,255,255,0.9)}
+
+    .login-body{padding:22px 24px}
+    .field{margin-bottom:14px;display:flex;flex-direction:column;gap:6px}
+    label{font-size:13px;color:var(--muted)}
+    input[type="email"], input[type="password"]{
+      padding:10px 12px;border:1px solid #e6e9ef;border-radius:8px;font-size:15px;
+      outline:none;transition:box-shadow .15s, border-color .15s;
+    }
+    input:focus{border-color:var(--accent);box-shadow:0 4px 14px rgba(40,116,240,0.12)}
+
+    .actions{display:flex;align-items:center;justify-content:space-between;margin-top:6px}
+    .checkbox{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+    .forgot{font-size:13px;color:var(--accent);text-decoration:none}
+
+    .submit{
+      width:100%;margin-top:16px;padding:11px 12px;background:var(--accent);color:#fff;border:0;border-radius:8px;
+      font-weight:600;cursor:pointer;font-size:15px;
+    }
+
+    .alt{padding:14px 24px;background:#fbfdff;border-top:1px solid #f1f4f8;font-size:14px;color:var(--muted);text-align:center}
+    .alt a{color:var(--accent);text-decoration:none;font-weight:600}
+
+    @media (max-width:420px){
+      .login-wrap{border-radius:12px}
+      .login-header{padding:18px}
+      .login-body{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <main class="login-wrap" aria-labelledby="loginTitle">
+    <header class="login-header">
+      <h1 id="loginTitle">Welcome back</h1>
+      <p>Sign in to continue to your account</p>
+    </header>
+
+    <section class="login-body">
+      <form action="#" method="post" autocomplete="on" novalidate>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Enter your password" required />
+        </div>
+
+        <div class="actions">
+          <label class="checkbox">
+            <input type="checkbox" name="remember" />
+            <span>Remember me</span>
+          </label>
+          <a class="forgot" href="#" aria-label="Forgot password">Forgot?</a>
+        </div>
+
+        <button class="submit" type="submit">Sign in</button>
+      </form>
+    </section>
+
+    <div class="alt">
+      New here? <a href="#">Create an account</a>
+    </div>
+  </main>
+</body>
+</html>

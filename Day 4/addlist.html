@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="course">
+    <button id="bt">Add</button>
+    <ol id="list"></ol>
+    <script>
+        let tex=document.getElementById("course");
+        let btn=document.getElementById("bt");
+        let list_item=document.getElementById("list");
+        btn.addEventListener("click",()=>{
+            if(tex.value!==""){
+                let li=document.createElement("li");
+                li.textContent=tex.value;
+                list_item.appendChild(li);
+            }
+        })
+        
+    </script>
+</body>
+</html>
