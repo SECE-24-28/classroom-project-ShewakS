@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #text1{
+            padding: 6px;
+            justify-content: center;
+        }
+
+       
+        #btn {
+            padding: 8px 20px;
+            cursor: pointer;
+            border: none;
+            background: #333;
+            color: white;
+            border-radius: 4px;
+        }
+    </style>
+
+</head>
+<body>
+    <input type="text" id="text1">
+    <button id="btn">Add</button>
+    <ol id="list"></ol>
+
+    <script>
+        let tex=document.getElementById("text1");
+        let list_item=document.getElementById("list");
+        let bt=document.getElementById("btn");
+        let frnds=["anbu","abbu","anand","vijay"];
+
+        function demo(){
+            list_item.innerHTML="";
+
+            frnds.forEach(frnd=>{
+                if(frnd.includes(tex.value)){
+                    let li=document.createElement("li");
+                    li.textContent=frnd;
+                    list_item.appendChild(li);
+                }
+            });
+        }
+        demo();
+
+        tex.addEventListener("keyup",demo);
+
+        bt.addEventListener("click", () => {
+            if (tex.value !== "") {
+                frnds.push(tex.value);
+                tex.value = "";   
+                demo();           
+            }
+        });
+    </script>
+</body>
+</html>

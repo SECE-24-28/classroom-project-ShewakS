@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Get</button>
+    <ol id="list"></ol>
+    <script>
+        let bt=document.getElementById("btn");
+        let list_item=document.getElementById("list");
+        bt.addEventListener("click",()=>{
+                    
+                let fetch_api=async()=>{
+                        
+                    let res=await fetch("https://jsonplaceholder.typicode.com/posts")
+                    let data=await res.json();
+                    data.forEach(posts=> {
+                        let l=document.createElement("li");
+                        l.textContent=posts.title;
+                        list_item.appendChild(l);
+                    });  
+                }
+                fetch_api();
+            });
+            
+                    
+    </script>
+</body>
+</html>
