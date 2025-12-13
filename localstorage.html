@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="text" id="text1">
+    <button id="btn">Save</button>
+
+    <script>
+        let t1=document.getElementById("text1");
+        let bt=document.getElementById("btn");
+        bt.addEventListener("click",()=>{
+            localStorage.setItem("myname",t1.value);
+            t1.value="";
+        })
+    </script> -->
+        <input type="text" id="text1" placeholder="Name">
+        <input type="text" id="text2" placeholder="Phone">
+        <button id="btn">Save</button>
+        <button id="show">Show Contacts</button>
+        <div id="display"></div>
+        
+        <script>
+        let t1=document.getElementById("text1");
+        let t2=document.getElementById("text2");
+        let bt=document.getElementById("btn");
+        let showBtn=document.getElementById("show");
+        let display=document.getElementById("display");
+
+        bt.addEventListener("click",()=>{
+            let na=t1.value;
+            let ph=t2.value;
+            if(!na || !ph) return;
+            
+            let contacts=JSON.parse(localStorage.getItem("contacts")) || [];
+            contacts.push({name:na, phone:ph});
+            localStorage.setItem("contacts",JSON.stringify(contacts));
+            
+            t1.value="";
+            t2.value="";
+            alert("Contact saved!");
+        });
+
+        function renderContacts() {
+            const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+            display.innerHTML = contacts.map(c => <p>${c.name}: ${c.phone}</p>).join('');
+        }
+
+        showBtn.addEventListener('click', renderContacts);
+
+        // render saved contacts on initial load
+        renderContacts();
+        </script>
+        
+</body>
+</html>
